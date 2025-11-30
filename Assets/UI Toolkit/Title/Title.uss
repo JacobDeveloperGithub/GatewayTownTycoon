@@ -1,0 +1,52 @@
+:root {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title-root {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 40px;
+    margin-top: 60px;
+    padding: 24px 28px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.12);
+    -unity-background-image-tint-color: white;
+}
+
+.game-title-label {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    -unity-font-style: bold;
+    margin-bottom: 18px;
+}
+
+.buttons-column {
+    flex-direction: column;
+}
+
+.title-button {
+    min-width: 160px;
+    height: 36px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(80, 80, 80, 0.95);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.title-button:hover {
+    background-color: rgba(110, 110, 110, 1.0);
+}
+
+.title-button:active {
+    background-color: rgba(150, 150, 150, 1.0);
+}

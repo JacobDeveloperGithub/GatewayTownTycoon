@@ -1,0 +1,39 @@
+.widgetRoot {
+    align-content: center;
+    justify-content: center;
+}
+
+.scrollView {
+    width: 100px;
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: 0;
+    flex-shrink: 1;
+}
+
+.unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.buildMenuItem {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    max-height: none;
+    height: auto;
+    min-height: 80px;
+    background-image: url("project://database/Assets/Art/IconsSheet.png?fileID=-1858684236&guid=74204fc072372d4ab980b56c98076373&type=3#IconsSheet_6");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    min-width: auto;
+}
+
+.checked {
+    border-width: 2px;
+    border-color: rgb(128, 128, 255);
+}

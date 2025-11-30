@@ -1,0 +1,20 @@
+.widgetRoot {
+    justify-content: center;
+    align-content: center;
+}
+
+.titleText {
+    -unity-text-align: upper-center;
+    width: 100%;
+}
+
+.scrollView .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 600px;
+    max-width: 800px;
+    max-height: 450px;
+    min-height: 250px;
+}

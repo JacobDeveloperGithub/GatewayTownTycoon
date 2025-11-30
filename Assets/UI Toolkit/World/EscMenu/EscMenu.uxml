@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/EscMenu/EscMenu.uss?fileID=7433441132597879392&amp;guid=3eeea881d8c55a2a297214407c9428bf&amp;type=3#EscMenu" />
+    <ui:VisualElement name="ESC_Root" class="widgetRoot" style="background-color: rgba(0, 0, 0, 0.94); display: none;">
+        <ui:Button name="Settings_btn" text="Settings" parse-escape-sequences="true" class="buttonClose" style="position: relative; bottom: 0; width: 150px;" />
+        <ui:Button name="Esc_btn" text="Exit to Main Menu" parse-escape-sequences="true" class="buttonClose" style="position: relative; bottom: 0; width: 150px;" />
+        <ui:Button name="Exit_btn" text="Close" parse-escape-sequences="true" class="buttonClose" style="position: relative; bottom: 0; width: 150px;" />
+    </ui:VisualElement>
+</ui:UXML>

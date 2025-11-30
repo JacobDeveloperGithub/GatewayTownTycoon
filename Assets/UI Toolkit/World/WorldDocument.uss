@@ -1,0 +1,25 @@
+:root {
+    width: 100%;
+    height: 100%;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.widgetRoot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.absoluteTemplateRoot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    visibility: visible;
+}

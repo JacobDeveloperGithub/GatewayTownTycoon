@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/BuildMode/FinishBuild/FinishBuild.uss?fileID=7433441132597879392&amp;guid=6c7323ae6bcb533ab8fab99989effc01&amp;type=3#FinishBuild" />
+    <ui:VisualElement name="FinishBuildRoot" picking-mode="Ignore" class="widgetRoot" style="align-self: auto; justify-content: flex-end;">
+        <ui:Button name="FinishButton" text="Done" enable-rich-text="false" class="button" style="background-image: url(&quot;project://database/Assets/Art/frame.png?fileID=21300000&amp;guid=c186e1d35465a5849afc17bae905a26a&amp;type=3#frame&quot;); -unity-slice-scale: 0.2px;" />
+    </ui:VisualElement>
+</ui:UXML>

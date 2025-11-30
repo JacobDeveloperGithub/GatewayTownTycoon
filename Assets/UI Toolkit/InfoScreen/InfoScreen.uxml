@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/InfoScreen/InfoScreen.uss?fileID=7433441132597879392&amp;guid=8360c275b23f5784096bb8288df25ec7&amp;type=3#InfoScreen" />
+    <ui:VisualElement style="flex-grow: 0; padding-top: 25px; padding-right: 25px; padding-bottom: 25px; padding-left: 25px; background-color: rgba(0, 0, 0, 0.94); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+        <ui:Label tabindex="-1" text="Select your mayor" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgba(0, 0, 0, 0); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="Mayors" class="FlexRow" style="flex-grow: 0; flex-shrink: 0; justify-content: flex-start; align-self: center; background-color: rgba(255, 255, 255, 0); flex-direction: row;">
+            <ui:Button name="Mayor0" style="flex-direction: column; align-items: center; padding: 10px; background-color: rgb(40, 40, 40); border-radius: 12px; width: 160px; height: auto;">
+                <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Art/Mayors/Snidely.png?fileID=2800000&amp;guid=67badfbbb8d7fb1d3a5664569753c92b&amp;type=3#Snidely&quot;); width: 150px; height: 150px; background-color: rgba(0, 0, 0, 0); border-radius: 8px;" />
+                <ui:Label text="Snidely" style="font-size: 20px; color: white; margin-top: 6px;" />
+            </ui:Button>
+            <ui:Button name="Mayor1" style="flex-direction: column; align-items: center; padding: 10px; background-color: rgb(40, 40, 40); border-radius: 12px; width: 160px; height: auto;">
+                <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Art/Mayors/Vandam.png?fileID=2800000&amp;guid=74e9c64e464f51ec8bdfe2899342a4bc&amp;type=3#Vandam&quot;); width: 150px; height: 150px; background-color: rgba(0, 0, 0, 0); border-radius: 8px;" />
+                <ui:Label text="Vandam" style="font-size: 20px; color: white; margin-top: 6px;" />
+            </ui:Button>
+            <ui:Button name="Mayor2" style="flex-direction: column; align-items: center; padding: 10px; background-color: rgb(40, 40, 40); border-radius: 12px; width: 160px; height: auto;">
+                <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Art/Mayors/Leighla.png?fileID=2800000&amp;guid=5cfe56849ef1401e0afa2a8583dc5e1d&amp;type=3#Leighla&quot;); width: 150px; height: 150px; background-color: rgba(0, 0, 0, 0); border-radius: 8px;" />
+                <ui:Label text="Leighla" style="font-size: 20px; color: white; margin-top: 6px;" />
+            </ui:Button>
+            <ui:Button name="Mayor3" style="flex-direction: column; align-items: center; padding: 10px; background-color: rgb(40, 40, 40); border-radius: 12px; width: 160px; height: auto;">
+                <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Art/Mayors/Ozz.png?fileID=2800000&amp;guid=60b0996bb61b3a7709fc13a33e94245c&amp;type=3#Ozz&quot;); width: 150px; height: 150px; background-color: rgba(0, 0, 0, 0); border-radius: 8px;" />
+                <ui:Label text="Ozz" style="font-size: 20px; color: white; margin-top: 6px;" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Name your town" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgba(0, 0, 0, 0); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; -unity-text-align: upper-center;" />
+        <ui:TextField picking-mode="Ignore" name="TextField" max-length="16" value="Town Name Here" style="color: rgb(124, 124, 124);" />
+        <ui:Button text="Done" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Done" style="color: rgb(0, 0, 0);" />
+    </ui:VisualElement>
+</ui:UXML>

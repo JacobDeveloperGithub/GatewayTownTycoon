@@ -1,0 +1,22 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/BusinessMenu/BusinessMenuItem.uss?fileID=7433441132597879392&amp;guid=61ba12fa4557cd279b995fd13387be00&amp;type=3#BusinessMenuItem" />
+    <engine:Button name="BusinessButton" parse-escape-sequences="true" display-tooltip-when-elided="true" class="business-card">
+        <engine:Label tabindex="-1" text="ItemName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="business-card__label" style="-unity-text-align: upper-center; font-size: 18px;" />
+        <engine:VisualElement name="Icon" class="business-card__icon" style="background-image: url(&quot;project://database/Assets/Art/Businesses/BusinessGas.png?fileID=1559601413&amp;guid=08edf1d269afeb1ea9642c6d067e0418&amp;type=3#BusinessGas_8&quot;); width: 100px; height: 72px; flex-grow: 1;" />
+        <engine:VisualElement name="InfoBox" class="business-card__info-box">
+            <engine:VisualElement class="business-card__row">
+                <engine:Label name="PurchaseCostLabel" text="Purchase:" class="business-card__label" />
+                <engine:Label name="PurchaseCostValue" text="$1500" class="business-card__value" />
+            </engine:VisualElement>
+            <engine:VisualElement class="business-card__row">
+                <engine:Label name="UpkeepCostLabel" text="Upkeep:" class="business-card__label" />
+                <engine:Label name="UpkeepCostValue" text="$100 / day" class="business-card__value" />
+            </engine:VisualElement>
+            <engine:VisualElement class="business-card__row">
+                <engine:Label name="RevenuePerCustomerLabel" text="Per Customer:" class="business-card__label" />
+                <engine:Label name="RevenuePerCustomerValue" text="$15" class="business-card__value" />
+            </engine:VisualElement>
+            <engine:Label name="BusinessDescription" text="A small gas station that serves local traffic and generates steady income over time." class="business-card__description" />
+        </engine:VisualElement>
+    </engine:Button>
+</engine:UXML>

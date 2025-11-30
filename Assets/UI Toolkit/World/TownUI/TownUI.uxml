@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/World/TownUI/TownUI.uss?fileID=7433441132597879392&amp;guid=29abf237115d94dcf8dcc159a93e952b&amp;type=3#TownUI" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <ui:VisualElement name="InfoBarRoot" picking-mode="Ignore" class="widgetRoot">
+        <ui:VisualElement name="InfoBar" style="-unity-background-scale-mode: stretch-to-fill; height: 121px; width: 800px; -unity-slice-scale: 0.15px;">
+            <ui:VisualElement name="MayorSprite" class="Sprite" style="background-image: url(&quot;project://database/Assets/Art/Mayors/Leighla.png?fileID=21300000&amp;guid=5cfe56849ef1401e0afa2a8583dc5e1d&amp;type=3#Leighla&quot;);" />
+            <ui:VisualElement name="Numbers" class="Stack">
+                <ui:VisualElement name="NumberContainer">
+                    <ui:VisualElement name="MoneyIcon" class="Icon" style="background-image: url(&quot;project://database/Assets/Art/IconsSheet.png?fileID=-1519401484&amp;guid=74204fc072372d4ab980b56c98076373&amp;type=3#IconsSheet_1&quot;);" />
+                    <ui:Label name="MoneyLabel" tabindex="-1" text="9999" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Divider" />
+            <ui:VisualElement name="RatingSprite" class="Sprite" style="background-image: url(&quot;project://database/Assets/Art/IconsSheet.png?fileID=-1728150141&amp;guid=74204fc072372d4ab980b56c98076373&amp;type=3#IconsSheet_5&quot;);" />
+            <ui:VisualElement name="Divider" />
+            <ui:VisualElement name="Labels" class="Stack">
+                <ui:Label name="TownLabel" tabindex="-1" text="Town Name Example" parse-escape-sequences="true" display-tooltip-when-elided="true" class="TownName" />
+                <ui:Label name="DateLabel" tabindex="-1" text="Saturday, March 01st" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

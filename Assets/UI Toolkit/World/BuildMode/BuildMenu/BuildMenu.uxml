@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/World/BuildMode/BuildMenu/BuildMenu.uss?fileID=7433441132597879392&amp;guid=3ea172bcd749932f2b488d59ffda73fb&amp;type=3#BuildMenu" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <ui:VisualElement name="BuildMenuRoot" picking-mode="Ignore" class="widgetRoot">
+        <ui:ScrollView name="BuildMenu" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" class="scrollView" style="background-image: url(&quot;project://database/Assets/Art/frame-no-right.png?fileID=21300000&amp;guid=42462179e41ad884f9ade608249f67fb&amp;type=3#frame-no-right&quot;); -unity-slice-scale: 0.2px; margin-top: 0; padding-top: 16px; padding-left: 16px; padding-bottom: 16px; background-color: rgba(0, 0, 0, 0); width: 116px;" />
+    </ui:VisualElement>
+</ui:UXML>

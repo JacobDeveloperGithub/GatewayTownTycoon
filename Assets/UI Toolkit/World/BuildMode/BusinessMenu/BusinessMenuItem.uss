@@ -1,0 +1,61 @@
+.business-card {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 225px;
+    height: 225px;
+    padding: 8px;
+    margin: 10px;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: rgb(51, 51, 51);
+    background-color: rgb(32, 32, 32);
+    -unity-text-align: upper-left;
+}
+
+.business-card__icon {
+    align-self: center;
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 8px;
+}
+
+.business-card__info-box {
+    flex-direction: column;
+    padding: 4px 6px;
+    margin-bottom: 6px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(68, 68, 68);
+    background-color: rgb(16, 16, 16);
+}
+
+.business-card__row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.business-card__label {
+    font-size: 11px;
+    color: rgb(204, 204, 204);
+    white-space: nowrap;
+}
+
+.business-card__value {
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    -unity-text-align: upper-right;
+}
+
+.business-card__description {
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgb(221, 221, 221);
+    white-space: normal;
+    -unity-text-align: upper-left;
+}

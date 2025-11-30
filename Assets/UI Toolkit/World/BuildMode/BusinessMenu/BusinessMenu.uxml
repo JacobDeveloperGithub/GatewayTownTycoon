@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/World/BuildMode/BusinessMenu/BusinessMenu.uss?fileID=7433441132597879392&amp;guid=21a8a7a8e9d9af540b7fd66afe3b1590&amp;type=3#BusinessMenu" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/MessageDisplay/MessageDisplay.uss?fileID=7433441132597879392&amp;guid=db39f2076acfb9488bc680880a816a80&amp;type=3#MessageDisplay" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <ui:VisualElement name="BusinessMenuRoot" class="widgetRoot">
+        <ui:VisualElement name="Menu" class="displayWindow" style="background-image: url(&quot;project://database/Assets/Art/frame.png?fileID=21300000&amp;guid=c186e1d35465a5849afc17bae905a26a&amp;type=3#frame&quot;); -unity-slice-scale: 0.2px;">
+            <ui:Label text="Business Shop" class="titleText" />
+            <ui:VisualElement name="Underline" class="underline" />
+            <ui:ScrollView name="Items" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden" mode="Vertical" class="scrollView" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

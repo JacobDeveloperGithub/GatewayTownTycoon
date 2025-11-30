@@ -1,0 +1,42 @@
+.widgetRoot {
+    justify-content: center;
+    align-content: center;
+}
+
+.displayWindow {
+    min-height: 40%;
+    padding: 15px;
+    flex-grow: 0;
+    background-image: url("project://database/Assets/Art/TestUI.png?fileID=21300000&guid=8395ff0d55e129cd1954a924c0be7b7a&type=3#TestUI");
+    align-self: auto;
+    min-width: 600px;
+    max-width: 800px;
+    max-height: 80%;
+}
+
+.underline {
+    height: 2px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 99%;
+    background-color: rgb(0, 0, 0);
+    align-self: center;
+}
+
+.titleText {
+    font-size: 32px;
+    -unity-text-align: upper-center;
+}
+
+.bodyText {
+    font-size: 18px;
+}
+
+.buttonClose {
+    justify-content: flex-start;
+    width: 200px;
+    align-self: center;
+    position: absolute;
+    bottom: -50px;
+    height: 90;
+}

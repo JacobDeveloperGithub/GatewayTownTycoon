@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Settings" src="project://database/Assets/UI%20Toolkit/SettingsMenu/Settings.uxml?fileID=9197481963319205126&amp;guid=1db7539a0e6a1da19b60666378692d10&amp;type=3#Settings" />
+    <ui:Template name="EscMenu" src="project://database/Assets/UI%20Toolkit/World/EscMenu/EscMenu.uxml?fileID=9197481963319205126&amp;guid=2ad5034bd9e39fc37a1fb8130ea4ea8d&amp;type=3#EscMenu" />
+    <ui:Template name="BuildMenu" src="project://database/Assets/UI%20Toolkit/World/BuildMode/BuildMenu/BuildMenu.uxml?fileID=9197481963319205126&amp;guid=8065bd05b11bcaba385d0382a0913c26&amp;type=3#BuildMenu" />
+    <ui:Template name="Notification" src="project://database/Assets/UI%20Toolkit/World/BuildMode/Notification/Notification.uxml?fileID=9197481963319205126&amp;guid=bb530396bea3fb641a75f2c45ffce551&amp;type=3#Notification" />
+    <ui:Template name="BusinessMenu" src="project://database/Assets/UI%20Toolkit/World/BuildMode/BusinessMenu/BusinessMenu.uxml?fileID=9197481963319205126&amp;guid=c83546b44302ecfb88d4577df8204725&amp;type=3#BusinessMenu" />
+    <ui:Template name="FinishBuild" src="project://database/Assets/UI%20Toolkit/World/BuildMode/FinishBuild/FinishBuild.uxml?fileID=9197481963319205126&amp;guid=047783b6d96a6e56d9cb341231db71e4&amp;type=3#FinishBuild" />
+    <ui:Template name="MessageDisplay" src="project://database/Assets/UI%20Toolkit/World/MessageDisplay/MessageDisplay.uxml?fileID=9197481963319205126&amp;guid=f47c3699e731a6a3fabeb85e9ad3cc75&amp;type=3#MessageDisplay" />
+    <ui:Template name="TownUI" src="project://database/Assets/UI%20Toolkit/World/TownUI/TownUI.uxml?fileID=9197481963319205126&amp;guid=a4ccd6e55cdce2e398a0a483d7494aaa&amp;type=3#TownUI" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <ui:VisualElement name="WorldRoot" picking-mode="Ignore" class="root" style="flex-grow: 1;">
+        <ui:Instance template="BuildMenu" picking-mode="Ignore" class="absoluteTemplateRoot" />
+        <ui:Instance template="Notification" picking-mode="Ignore" class="absoluteTemplateRoot" />
+        <ui:Instance template="BusinessMenu" picking-mode="Ignore" class="absoluteTemplateRoot" />
+        <ui:Instance template="FinishBuild" picking-mode="Ignore" name="FinishBuild" class="absoluteTemplateRoot" />
+        <ui:Instance template="TownUI" picking-mode="Ignore" class="absoluteTemplateRoot" />
+        <ui:Instance template="MessageDisplay" picking-mode="Ignore" class="absoluteTemplateRoot" />
+        <ui:Instance template="EscMenu" picking-mode="Ignore" name="EscMenu" class="absoluteTemplateRoot" />
+        <ui:Instance template="Settings" picking-mode="Ignore" name="Settings" class="absoluteTemplateRoot" />
+    </ui:VisualElement>
+</ui:UXML>

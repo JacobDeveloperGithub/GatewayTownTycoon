@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1563c7be228a57518aa365d0b593c40e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _buildMode: {instanceID: 0}
+  - _playMode: {instanceID: 0}
+  - _businessMenu: {instanceID: 0}
+  - _townUI: {instanceID: 0}
+  - _buildMenuUI: {instanceID: 0}
+  - _finishUI: {instanceID: 0}
+  - _worldUI: {instanceID: 0}
+  - _escUI: {instanceID: 0}
+  - _carPrefab: {fileID: 3932015708315718852, guid: 7d8d7135b181dce48b29fc001063aa0d, type: 3}
+  - _meteorDecor: {fileID: 1332817049702689547, guid: 923ed89f7d6afa1828b3546edf310d5c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

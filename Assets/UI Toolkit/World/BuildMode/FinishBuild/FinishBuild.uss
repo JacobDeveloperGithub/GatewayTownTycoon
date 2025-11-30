@@ -1,0 +1,18 @@
+.widgetRoot {
+    align-content: center;
+    justify-content: center;
+}
+
+.button {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    height: 100px;
+    width: 250px;
+    background-image: url("project://database/Assets/Art/TestUI.png?fileID=21300000&guid=8395ff0d55e129cd1954a924c0be7b7a&type=3#TestUI");
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0);
+    align-self: flex-end;
+    font-size: 32px;
+}

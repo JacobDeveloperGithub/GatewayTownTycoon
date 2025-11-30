@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/SettingsMenu/Settings.uss?fileID=7433441132597879392&amp;guid=192f2b8688fdbadebb0ea9bf7ed2ce65&amp;type=3#Settings" />
+    <Style src="project://database/Assets/UI%20Toolkit/World/WorldDocument.uss?fileID=7433441132597879392&amp;guid=2398acf6baccf6de6ae87c319d4718b9&amp;type=3#WorldDocument" />
+    <ui:VisualElement name="SettingsRoot" class="widgetRoot" style="background-color: rgba(0, 0, 0, 0.2); justify-content: center;">
+        <ui:VisualElement class="settings-dialog" style="background-image: url(&quot;project://database/Assets/Art/frame.png?fileID=21300000&amp;guid=c186e1d35465a5849afc17bae905a26a&amp;type=3#frame&quot;); -unity-slice-scale: 0.2px; background-color: rgba(255, 255, 255, 0);">
+            <ui:VisualElement class="settings-header" style="flex-grow: 0; width: 100%;">
+                <ui:Label text="Settings" class="settings-title" />
+                <ui:Button name="SettingsCloseButton" text="X" class="settings-close-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="settings-row">
+                <ui:Label text="SFX Volume" class="settings-label" />
+                <ui:Slider name="sfxVolumeSlider" lowValue="0" highValue="1" value="1" showInputField="true" high-value="1" class="settings-slider" />
+            </ui:VisualElement>
+            <ui:VisualElement class="settings-row">
+                <ui:Label text="Music Volume" class="settings-label" />
+                <ui:Slider name="musicVolumeSlider" lowValue="0" highValue="1" value="1" showInputField="true" high-value="1" class="settings-slider" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -45,16 +45,8 @@ public class SoundTrackManager : MonoBehaviour {
 
     private void Start() {
         _currentMode = MusicMode.None;
-        _introSource.clip = _buildModeIntro;
-        _introSource.loop = false;
-        _introSource.playOnAwake = false;
-        _introSource.Play();
-
-        _loopSource.playOnAwake = false;
-        _loopSource.loop = true;
-        _loopSource.clip = _buildModeLooping;
         if (GameManager.Instance) _globalVolume = GameManager.Instance.MusicVolume;
-        FadeTo(_maxVolume * _globalVolume, _fadeDuration);
+        StartBuildMode();
     }
 
     private void Update() {

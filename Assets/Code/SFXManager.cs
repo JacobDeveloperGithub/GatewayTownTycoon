@@ -20,7 +20,7 @@ public class SFXManager : MonoBehaviour {
     private AudioSource[] _erases;
     private AudioSource[] _cashes;
 
-    private float _volume = 0.5f;
+    private float _volume = 0.33f;
     private float _globalVolume = 0.5f;
 
     private void Awake() {

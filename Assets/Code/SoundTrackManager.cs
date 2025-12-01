@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -8,28 +7,20 @@ public class SoundTrackManager : MonoBehaviour {
     [Header("General")]
     private float _maxVolume = 0.5f;
     private float _globalVolume = 0.5f;
-    [SerializeField] private float _fadeDuration = 10f; // leave at 10 for now
+    private float _fadeDuration = 3; // leave at 10 for now
 
-    [Header("Build Mode (seconds)")]
-    [SerializeField] private float _buildModeFadeTo   = 10f; // intro start for build
-    [SerializeField] private float _buildModeLoopFrom = 10f;
-    [SerializeField] private float _buildModeLoopTo   = 10f;
+    [SerializeField] private AudioClip _buildModeIntro;
+    [SerializeField] private AudioClip _buildModeLooping;
 
-    [Header("Play Mode (seconds)")]
-    [SerializeField] private float _playModeFadeTo   = 10f; // intro start for play
-    [SerializeField] private float _playModeLoopFrom = 10f;
-    [SerializeField] private float _playModeLoopTo   = 10f;
+    [SerializeField] private AudioClip _playModeIntro;
+    [SerializeField] private AudioClip _playModeLooping;
 
-    private enum MusicMode {
-        None,
-        Build,
-        Play
-    }
+    private AudioSource _introSource;
+    private AudioSource _loopSource;
 
-    private AudioSource _src;
+    private enum MusicMode { None, Build, Play }
+
     private MusicMode _currentMode = MusicMode.None;
-    private float _currentLoopFrom;
-    private float _currentLoopTo;
     private int _volumeTweenId = -1;
 
     private void Awake() {
@@ -40,33 +31,37 @@ public class SoundTrackManager : MonoBehaviour {
 
         Instance = this;
 
-        _src = GetComponent<AudioSource>();
-        _src.loop = false;
-        _src.volume = 0f;
+
+        _introSource = GetComponent<AudioSource>();
+        _introSource.playOnAwake = false;
+        _introSource.loop = false;
+        _introSource.volume = 0f;
+
+        _loopSource = gameObject.AddComponent<AudioSource>();
+        _loopSource.playOnAwake = false;
+        _loopSource.loop = true;
+        _loopSource.volume = 0f;
     }
 
     private void Start() {
-        if (_src.clip == null)
-            return;
-
         _currentMode = MusicMode.None;
-        _src.Play();
-        _currentLoopFrom = _buildModeLoopFrom;
-        _currentLoopTo = _buildModeLoopTo;
+        _introSource.clip = _buildModeIntro;
+        _introSource.loop = false;
+        _introSource.playOnAwake = false;
+        _introSource.Play();
+
+        _loopSource.playOnAwake = false;
+        _loopSource.loop = true;
+        _loopSource.clip = _buildModeLooping;
         if (GameManager.Instance) _globalVolume = GameManager.Instance.MusicVolume;
         FadeTo(_maxVolume * _globalVolume, _fadeDuration);
     }
 
     private void Update() {
-        if (GameManager.Instance && _globalVolume != GameManager.Instance.MusicVolume) {
+        if (GameManager.Instance && !Mathf.Approximately(_globalVolume, GameManager.Instance.MusicVolume)) {
             _globalVolume = GameManager.Instance.MusicVolume;
-            if (_src.volume >= _maxVolume * _globalVolume) _src.volume = _maxVolume * _globalVolume;
-            if (_src.volume <= _maxVolume * _globalVolume) _src.volume = _maxVolume * _globalVolume;
-        }
-        if (_src.clip == null || !_src.isPlaying) return;
-
-        if (_volumeTweenId == -1 && _currentLoopTo > _currentLoopFrom && _src.time >= _currentLoopTo) {
-            TransitionTo(_currentLoopFrom, _currentLoopFrom, _currentLoopTo);
+            var target = _maxVolume * _globalVolume;
+            FadeTo(target, 0.25f); // quick adjust when settings change
         }
     }
 
@@ -74,62 +69,35 @@ public class SoundTrackManager : MonoBehaviour {
         if (Instance == this)
             Instance = null;
     }
-
+    
     public void StartBuildMode() {
-        if (_src.clip == null)
-            return;
-
-        if (_currentMode == MusicMode.Build)
-            return;
+        if (_currentMode == MusicMode.Build) return;
 
         _currentMode = MusicMode.Build;
-
-        TransitionTo(
-            fadeTo:   _buildModeFadeTo,
-            loopFrom: _buildModeLoopFrom,
-            loopTo:   _buildModeLoopTo
-        );
+        FadeTo(0, _fadeDuration, () => ScheduleMusic(_buildModeIntro, _buildModeLooping));
     }
 
     public void StartPlayMode() {
-        if (_src.clip == null)
-            return;
-
-        if (_currentMode == MusicMode.Play)
-            return;
+        if (_currentMode == MusicMode.Play) return;
 
         _currentMode = MusicMode.Play;
-
-        TransitionTo(
-            fadeTo:   _playModeFadeTo,
-            loopFrom: _playModeLoopFrom,
-            loopTo:   _playModeLoopTo
-        );
+        FadeTo(0, _fadeDuration, () => ScheduleMusic(_playModeIntro, _playModeLooping));
     }
 
-    private void TransitionTo(float fadeTo, float loopFrom, float loopTo) {
-        FadeTo(0f, _fadeDuration, () => {
-            SetLoopRegion(loopFrom, loopTo);
+    private void ScheduleMusic(AudioClip intro, AudioClip loop) {
+        _introSource.Stop();
+        _loopSource.Stop();
 
-            _src.time = ClampTime(fadeTo);
+        _introSource.clip = intro;
+        _loopSource.clip = loop;
 
-            if (!_src.isPlaying)
-                _src.Play();
+        double dspStart = AudioSettings.dspTime + 0.05;          // slight safety offset
+        double loopStart = dspStart + intro.length;
 
-            FadeTo(_maxVolume * _globalVolume, _fadeDuration);
-        });
-    }
+        _introSource.PlayScheduled(dspStart);
+        _loopSource.PlayScheduled(loopStart);
 
-    private void SetLoopRegion(float from, float to) {
-        _currentLoopFrom = Mathf.Max(0f, from);
-        _currentLoopTo   = Mathf.Max(_currentLoopFrom, to);
-    }
-
-    private float ClampTime(float t) {
-        if (_src.clip == null)
-            return 0f;
-
-        return Mathf.Clamp(t, 0f, Mathf.Max(0f, _src.clip.length - 0.01f));
+        FadeTo(_maxVolume * _globalVolume, _fadeDuration);
     }
 
     private void FadeTo(float targetVolume, float duration, System.Action onComplete = null) {
@@ -138,27 +106,18 @@ public class SoundTrackManager : MonoBehaviour {
             _volumeTweenId = -1;
         }
 
-        if (targetVolume > _src.volume) {
-            _volumeTweenId = LeanTween
-                .value(gameObject, _src.volume, targetVolume, duration)
-                .setOnUpdate(val => _src.volume = val)
-                .setEaseInSine()
-                .setOnComplete(() => {
-                    _volumeTweenId = -1;
-                    onComplete?.Invoke();
-                })
-                .id;
-        } else {
-            _volumeTweenId = LeanTween
-                .value(gameObject, _src.volume, targetVolume, duration)
-                .setOnUpdate(val => _src.volume = val)
-                .setEaseOutSine()
-                .setOnComplete(() => {
-                    _volumeTweenId = -1;
-                    onComplete?.Invoke();
-                })
-                .id;
-        }
+        float start = _introSource.volume;
+        _volumeTweenId = LeanTween
+            .value(gameObject, start, targetVolume, duration)
+            .setOnUpdate(val => {
+                _introSource.volume = val;
+                _loopSource.volume = val;
+            })
+            .setEaseInOutSine()
+            .setOnComplete(() => {
+                _volumeTweenId = -1;
+                onComplete?.Invoke();
+            })
+            .id;
     }
-
 }

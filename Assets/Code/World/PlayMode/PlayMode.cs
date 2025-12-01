@@ -19,7 +19,7 @@ public class PlayMode : MonoBehaviour, IScheduled {
     private TownUI _townUI;
     private Map _map;
 
-    [SerializeField] private float _targetWeekDurationSeconds = 30f;
+    private float _targetWeekDurationSeconds = 45f;
 
     private float _spawnIntervalSeconds = 0.2f;
     private readonly int _simulatedDaysInWeek = 6;

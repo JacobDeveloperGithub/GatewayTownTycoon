@@ -38,8 +38,10 @@ public class Map {
         foreach (MapObject mo in objects) {
             if (mo.Locked) {
                 PutAt(mo, mo.GetCoordinate(), true);
-                continue;
             }
+        } 
+        foreach (MapObject mo in objects) {
+            if (mo.Locked) continue;
             Vector2 pos;
             Coordinate at;
             do {
